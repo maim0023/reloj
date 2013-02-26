@@ -1,33 +1,33 @@
-utilizando  System ;
-espacio de nombres  Practica2
+using System;
+namespace Practica2
 {
-  público  de clase  Cronometro
+	public class Cronometro
 	{
-		privadas  int  Horas ;
-		privadas  int  minutes ;
-		privadas  int  seconds ;
-		privadas  Utilerias  utilerias ;
+		private int horas;
+		private int minutos;
+		private int segundos;
+		private Utilerias utilerias;
 
-		público  Cronometro  ()
+		public Cronometro ()
 		{
-			este . Horas  =  0 ;
-			esto . Minutos  =  0 ;
-			esto . seconds  =  0 ;
-			esto . utilerias  =  nuevo  Utilerias ();
+			this.horas = 0;
+			this.minutos = 0;
+			this.segundos = 0;
+			this.utilerias = new Utilerias();
 		}
 
-		público  vacío  INICIAR () {
-			este . iniciaProceso ();			
+		public void iniciar(){
+			this.iniciaProceso();			
 		}
 
-		privado  vacío  iniciaProceso () {
-			este . utilerias . limpiaPantalla ();
-			para ( esto . Horas  =  0 ;  este . Horas  <  1,000 ;  este . Horas + +) {
-				para ( esto . Minutos  =  0 ;  éste . Minutos  <  60 ;  éste . Minutos + +) {
-					para ( esto . seconds  =  0 ;  éste . Segundos  <  60 ;  éste . Segundos + +) {
-						esto . utilerias . imprimeTiempoActual ( este . Horas ,  este . Minutos ,  este . Segundos );
-						este . utilerias . duerme1Segundo ();
-						este . utilerias . limpiaPantalla ();
+		private void iniciaProceso(){
+			this.utilerias.limpiaPantalla();
+			for(this.horas = 0; this.horas < 1000; this.horas++){
+				for(this.minutos = 0; this.minutos < 60; this.minutos++){
+					for(this.segundos = 0; this.segundos < 60; this.segundos++){
+						this.utilerias.imprimeTiempoActual(this.horas, this.minutos, this.segundos);
+						this.utilerias.duerme1Segundo();
+						this.utilerias.limpiaPantalla();
 					}
 				}
 			}
